@@ -1,18 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CommonModule } from '@angular/common';
+import { CarComponent } from './carlist.component';
+import { CarApiService } from '../../services/car-api.service';
+import { ICar, NewCar } from '../../interfaces/car';
 
-import { CarlistComponent } from './carlist.component';
-
-describe('CarlistComponent', () => {
-  let component: CarlistComponent;
-  let fixture: ComponentFixture<CarlistComponent>;
+describe('CarComponent', () => {
+  let component: CarComponent;
+  let fixture: ComponentFixture<CarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CarlistComponent]
-    })
-    .compileComponents();
+      imports: [CommonModule], 
+      declarations: [CarComponent], 
+      providers: [CarApiService] 
+    }).compileComponents(); 
     
-    fixture = TestBed.createComponent(CarlistComponent);
+    fixture = TestBed.createComponent(CarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
