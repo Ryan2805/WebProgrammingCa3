@@ -15,7 +15,7 @@ export class CarComponent {
 
 
   deleteCar(carId:string) { 
-    this._carAPIService.delCarDetails(carId).subscribe(result =>
+    this._carAPIService.deleteCar(carId).subscribe(result =>
       { 
         console.log(result);
       });
